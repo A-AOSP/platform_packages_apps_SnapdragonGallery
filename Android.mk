@@ -10,11 +10,6 @@ LOCAL_STATIC_JAVA_LIBRARIES := android-support-v13
 LOCAL_STATIC_JAVA_LIBRARIES += org.codeaurora.gallery.common
 LOCAL_STATIC_JAVA_LIBRARIES += xmp_toolkit
 LOCAL_STATIC_JAVA_LIBRARIES += mp4parser
-#LOCAL_STATIC_JAVA_LIBRARIES += android-support-v8-renderscript
-
-#LOCAL_RENDERSCRIPT_TARGET_API := 18
-#LOCAL_RENDERSCRIPT_COMPATIBILITY := 18
-#LOCAL_RENDERSCRIPT_FLAGS := -rs-package-name=android.support.v8.renderscript
 
 # Keep track of previously compiled RS files too (from bundled GalleryGoogle).
 prev_compiled_rs_files := $(call all-renderscript-files-under, src)
@@ -22,18 +17,16 @@ prev_compiled_rs_files := $(call all-renderscript-files-under, src)
 
 # We already have these files from GalleryGoogle, so don't install them.
 LOCAL_RENDERSCRIPT_SKIP_INSTALL := $(prev_compiled_rs_files)
-# $(warning Anand Commend LOCAL_RENDERSCRIPT_SKIP_INSTALL is $(LOCAL_RENDERSCRIPT_SKIP_INSTALL))
+
 
 LOCAL_SRC_FILES := $(call all-java-files-under, src) $(prev_compiled_rs_files)
 LOCAL_SRC_FILES += $(call all-java-files-under, src_pd)
-
-# $(warning Anand Commend LOCAL_RENDERSCRIPT_SKIP_INSTALL is $(LOCAL_RENDERSCRIPT_SKIP_INSTALL))
 
 LOCAL_RESOURCE_DIR += $(LOCAL_PATH)/res
 
 LOCAL_AAPT_FLAGS := --auto-add-overlay
 
-LOCAL_PACKAGE_NAME := SnapdragonGallery
+LOCAL_PACKAGE_NAME := Gallery
 
 LOCAL_PRIVILEGED_MODULE := true
 
