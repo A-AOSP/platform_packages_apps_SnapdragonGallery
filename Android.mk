@@ -30,7 +30,7 @@ LOCAL_PACKAGE_NAME := Gallery
 
 LOCAL_PRIVILEGED_MODULE := true
 
-LOCAL_OVERRIDES_PACKAGES := Gallery Gallery3D GalleryNew3D Gallery2
+LOCAL_OVERRIDES_PACKAGES := Gallery3D GalleryNew3D Gallery2
 
 LOCAL_SDK_VERSION := current
 
